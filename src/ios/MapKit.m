@@ -4,6 +4,7 @@
 //
 
 #import "MapKit.h"
+#import "MBXMapKit.h"
 #import "CDVAnnotation.h"
 #import "AsyncImageView.h"
 
