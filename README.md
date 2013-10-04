@@ -1,13 +1,13 @@
-MapKit plugin for iOS and Android
+MapKit plugin for iOS (+ [MapBox](http://www.mapbox.com/)) and Android 
 =================================
+
+#### This fork of MapKit allows you to use MapBox tiles inside your Phonegap app (iOS only currently).
 
 Uses *Apple Maps* on iOS and *Google Maps v2* on Android
 
 Currently only works/tested on Android and iOS. Requires Cordova 3.0+ (will not work on earlier versions without modifications).
 
-![Cordova Map 1](http://i.imgur.com/Mf6oeXal.png)
-
-![Cordova Map 2](http://i.imgur.com/XaaBGeGl.png)
+![MapBox Map](https://i.cloudup.com/EQojawxXE2-3000x3000.png)
 
 ![Cordova Map 3](http://i.imgur.com/3IoDj0Rl.png)
 
