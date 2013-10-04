@@ -46,7 +46,7 @@
     }
 
     self.childView = [[UIView alloc] initWithFrame:CGRectMake(x,y,width,height)];
-    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(self.childView.bounds.origin.x, self.childView.bounds.origin.x, self.childView.bounds.size.width, self.childView.bounds.size.height)];
+    self.mapView = [[MBXMapView alloc] initWithFrame:CGRectMake(self.childView.bounds.origin.x, self.childView.bounds.origin.x, self.childView.bounds.size.width, self.childView.bounds.size.height)];
     self.mapView.delegate = self;
     self.mapView.multipleTouchEnabled   = YES;
     self.mapView.autoresizesSubviews    = YES;
@@ -55,6 +55,8 @@
 	self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	self.childView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
+	//Custom MapID
+    [self.childView addSubview:[[MBXMapView alloc] initWithFrame:self.mapView.bounds mapID:@"justin.map-pgygbwdm"]];
 
     CLLocationCoordinate2D centerCoord = { [[options objectForKey:@"lat"] floatValue] , [[options objectForKey:@"lon"] floatValue] };
 	CLLocationDistance diameter = [[options objectForKey:@"diameter"] floatValue];
@@ -63,7 +65,7 @@
                                                                                                 diameter*(height / self.webView.bounds.size.width),
                                                                                                 diameter*(height / self.webView.bounds.size.width))];
     [self.mapView setRegion:region animated:YES];
-	[self.childView addSubview:self.mapView];
+
 
 	[ [ [ self viewController ] view ] addSubview:self.childView];
 
@@ -186,7 +188,7 @@
 }
 
 //Might need this later?
-/*- (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+/*- (void) mapView:(MBXMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     MKCoordinateRegion mapRegion;
     mapRegion.center = userLocation.coordinate;
@@ -197,7 +199,7 @@
 }
 
 
-- (void)mapView:(MKMapView *)theMapView regionDidChangeAnimated: (BOOL)animated
+- (void)mapView:(MBXMapView *)theMapView regionDidChangeAnimated: (BOOL)animated
 {
     NSLog(@"region did change animated");
     float currentLat = theMapView.region.center.latitude;
@@ -213,7 +215,7 @@
  */
 
 
-- (MKAnnotationView *) mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>) annotation {
+- (MKAnnotationView *) mapView:(MBXMapView *)theMapView viewForAnnotation:(id <MKAnnotation>) annotation {
   
   if ([annotation class] != CDVAnnotation.class) {
     return nil;

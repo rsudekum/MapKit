@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MBXMapKit.h"
 
 @interface CDVAnnotation : NSObject <MKAnnotation> {
 @private
