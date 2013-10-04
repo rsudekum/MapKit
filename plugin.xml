@@ -68,9 +68,11 @@ In case everything miserably fails and you can't build your project, you might n
         <header-file src="src/ios/AsyncImageView.h" />
         <header-file src="src/ios/CDVAnnotation.h" />
         <header-file src="src/ios/MapKit.h" />
+        <header-file src="src/ios/MBXMapKit.h" />
 
         <source-file src="src/ios/AsyncImageView.m" />
         <source-file src="src/ios/CDVAnnotation.m" />
         <source-file src="src/ios/MapKit.m" />
+        <source-file src="src/ios/MBXMapKit.m" />
     </platform>
 </plugin>
